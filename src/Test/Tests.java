@@ -1,10 +1,10 @@
-package Test;
 
-/**
- * Created by Андрей on 17.09.2014.
- */
-public class Tests {
-    public static void Run(){
+import junit.framework.TestCase;
 
+public class Tests extends TestCase {
+
+    public void test1(){
+       // TODO:
     }
+
 }
