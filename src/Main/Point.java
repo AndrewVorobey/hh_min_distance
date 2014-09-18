@@ -9,7 +9,7 @@ public class Point {
     public int id;
     private static int count;
 
-    Point(int _x, int _y){
+    public Point(int _x, int _y){
         x = _x;
         y = _y;
         id = count++;
