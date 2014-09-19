@@ -6,14 +6,22 @@ import java.io.InputStreamReader;
 
 /**
  * Created by Андрей on 17.09.2014.
+ * Входные данные:
+ * N - количество точке.
+ * X1 Y1
+ * ...
+ * XN YN
+ * Выходные данные:
+ * minDist
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        PointsFild pointsFild = new PointsFild();
         BufferedReader inputStream = new BufferedReader(new InputStreamReader(System.in));
-        for(int i = 0; i < 5; i++) {
-            String a = inputStream.readLine();
-            String[] StringPint = a.split(" ");
+        int N = Integer.parseInt(inputStream.readLine());
+        PointsFild pointsFild = new PointsFild(N);
+        for (int i = 0; i < N; i++) {
+            String inputLine = inputStream.readLine();
+            String[] StringPint = inputLine.split(" ");
             pointsFild.addPoint(new Point(Integer.parseInt(StringPint[0]), Integer.parseInt(StringPint[1])));
         }
 
