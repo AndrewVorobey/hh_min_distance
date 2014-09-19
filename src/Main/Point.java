@@ -21,16 +21,25 @@ public class Point {
     }
 }
 
-    class compareX implements Comparator<Point> {
-
+class compareX implements Comparator<Point> {
+    @Override
     public int compare(Point A, Point B) {
-        return (A.x < B.x || A.x == B.x && A.y < B.y) ? 1 : 0;
+        if(A.x < B.x || (A.x == B.x && A.y < B.y))
+            return 1;
+        else if(A.x == B.x && A.y == B.y)
+            return 0;
+        else return -1;
     }
 }
 
-    class compareY implements Comparator<Point> {
-
+class compareY implements Comparator<Point> {
+    @Override
     public int compare(Point A, Point B) {
-        return (A.y < B.y) ? 1 : 0;
+        if (A.y < B.y)
+            return 1;
+        else if (A.y == B.y)
+            return 0;
+        else
+            return -1;
     }
 }
