@@ -30,7 +30,18 @@ public class Tests extends TestCase {
         assertTrue("Тест на нецелочисленный результат завален",fild.findMinDistance() == sqrt(200));
     }
 
-    public static void testMerge(){//white box
+    public static void testMerge1(){//white box
+        PointsFild fild = new PointsFild(5);
+        fild.addPoint(new Point(10,11));
+        fild.addPoint(new Point(220,204));
+        fild.addPoint(new Point(208,204));
+        fild.addPoint(new Point(201,20));
+        fild.addPoint(new Point(10,10));
+        double A= fild.findMinDistance();
+        assertTrue("Тест на слияние 1 завален",fild.findMinDistance() == 1);
+    }
+
+    public static void testMerge2(){//white box
         PointsFild fild = new PointsFild(10);
         fild.addPoint(new Point(10,11));
         fild.addPoint(new Point(220,204));
@@ -42,7 +53,7 @@ public class Tests extends TestCase {
         fild.addPoint(new Point(208,204));
         fild.addPoint(new Point(10,10));
         fild.addPoint(new Point(201,20));
-        assertTrue("Тест на слияние завален",fild.findMinDistance() == 1);
+        assertTrue("Тест на слияние 2 завален",fild.findMinDistance() == 1);
     }
 
 }
