@@ -7,7 +7,7 @@ import static java.lang.Math.sqrt;
 public class Tests extends TestCase {
 
     public static void testByHH(){//positive testing
-        PointsFild fild = new PointsFild();
+        PointsFild fild = new PointsFild(3);
         fild.addPoint(new Point(10,10));
         fild.addPoint(new Point(20,10));
         fild.addPoint(new Point(20,15));
@@ -15,7 +15,7 @@ public class Tests extends TestCase {
     }
 
     public static void testSamePoints(){
-        PointsFild fild = new PointsFild();
+        PointsFild fild = new PointsFild(4);
         fild.addPoint(new Point(10,10));
         fild.addPoint(new Point(20,10));
         fild.addPoint(new Point(20,15));
@@ -24,14 +24,14 @@ public class Tests extends TestCase {
     }
 
     public static void testNotIntegerResult(){
-        PointsFild fild = new PointsFild();
+        PointsFild fild = new PointsFild(2);
         fild.addPoint(new Point(10,10));
         fild.addPoint(new Point(20,20));
         assertTrue("Тест на нецелочисленный результат завален",fild.findMinDistance() == sqrt(200));
     }
 
     public static void testMerge(){//white box
-        PointsFild fild = new PointsFild();
+        PointsFild fild = new PointsFild(10);
         fild.addPoint(new Point(10,11));
         fild.addPoint(new Point(220,204));
         fild.addPoint(new Point(160,105));
@@ -42,7 +42,7 @@ public class Tests extends TestCase {
         fild.addPoint(new Point(208,204));
         fild.addPoint(new Point(10,10));
         fild.addPoint(new Point(201,20));
-        assertTrue("Тест на слияние пройден завален",fild.findMinDistance() == 1);
+        assertTrue("Тест на слияние завален",fild.findMinDistance() == 1);
     }
 
 }
