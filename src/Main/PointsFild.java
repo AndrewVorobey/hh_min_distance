@@ -43,8 +43,8 @@ public class PointsFild {
         int midx = points[middle].x;
         recursion(Begin, middle);
         recursion(middle + 1, End);
-        sort(points, Begin, End + 1, new compareY());
-        System.arraycopy(points, Begin, auxiliaryArray, 0, End - Begin);
+        mergeSort(points,Begin,middle+1,middle+1,End +1, auxiliaryArray, new compareY());
+        System.arraycopy(auxiliaryArray, 0, points, Begin, End - Begin);
 
         int tsz = 0;
         for (int i = Begin; i <= End; ++i)
@@ -67,6 +67,24 @@ public class PointsFild {
         double dist = Point.dist(a, b);
         if (dist < minDist) {
             minDist = dist;
+        }
+    }
+
+    void mergeSort(Point[] from, int begin1, int end1, int begin2, int end2,Point[] to, compareY cmp){
+        int i = 0;
+        for(;(begin1 < end1 && begin2 < end2); i++){
+            if(cmp.compare(from[begin1],from[begin2]) > 0)
+                to[i++] = from[begin1++];
+            else
+                to[i++] = from[begin2++];
+        }
+
+        for(;begin1 < end1; i++){
+            to[i++] = from[begin1++];
+        }
+
+        for(;begin2 < end2; i++){
+            to[i++] = from[begin2++];
         }
     }
 
