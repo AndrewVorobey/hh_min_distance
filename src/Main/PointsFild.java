@@ -72,18 +72,18 @@ public class PointsFild {
 
     void mergeSort(Point[] from, int begin1, int end1, int begin2, int end2,Point[] to, compareY cmp){
         int i = 0;
-        for(;(begin1 < end1 && begin2 < end2); i++){
-            if(cmp.compare(from[begin1],from[begin2]) > 0)
+        for(;(begin1 < end1 && begin2 < end2);){
+            if(cmp.compare(from[begin1],from[begin2]) < 0)
                 to[i++] = from[begin1++];
             else
                 to[i++] = from[begin2++];
         }
 
-        for(;begin1 < end1; i++){
+        for(;begin1 < end1;){
             to[i++] = from[begin1++];
         }
 
-        for(;begin2 < end2; i++){
+        for(;begin2 < end2;){
             to[i++] = from[begin2++];
         }
     }
