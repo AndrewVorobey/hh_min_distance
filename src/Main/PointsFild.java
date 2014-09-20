@@ -21,7 +21,7 @@ public class PointsFild {
 
     public double findMinDistance() {
         minDist = Point.dist(points[0], points[1]);
-        sort(points, 0, size - 1, new compareX());
+        sort(points, 0, size , new compareX());
         recursion(0, size - 1);
         return minDist;
     }
@@ -44,7 +44,7 @@ public class PointsFild {
         recursion(Begin, middle);
         recursion(middle + 1, End);
         mergeSort(points,Begin,middle+1,middle+1,End +1, auxiliaryArray, new compareY());
-        System.arraycopy(auxiliaryArray, 0, points, Begin, End - Begin);
+        System.arraycopy(auxiliaryArray, 0, points, Begin, End - Begin + 1);
 
         int tsz = 0;
         for (int i = Begin; i <= End; ++i)
