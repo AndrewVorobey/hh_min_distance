@@ -56,4 +56,16 @@ public class Tests extends TestCase {
         assertTrue("Тест на слияние 2 завален",fild.findMinDistance() == 1);
     }
 
+    public static void testBorder(){//white box
+        PointsFild fild = new PointsFild(7);
+          fild.addPoint(new Point(43,15));
+          fild.addPoint(new Point(43,611));
+          fild.addPoint(new Point(43,513));
+          fild.addPoint(new Point(47,316));
+          fild.addPoint(new Point(47,15));
+          fild.addPoint(new Point(47,217));
+          fild.addPoint(new Point(47,119));
+         assertTrue("Тест на граничные условия сортировок 2 завален",fild.findMinDistance() == 4);
+    }
+
 }
